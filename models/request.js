@@ -16,7 +16,7 @@ const requestsSchema = new mongoose.Schema({
         type: Date,
     },
     prefferedTime:{
-        type:Date
+        type:String
     }
 }, {
     timestamps: true
