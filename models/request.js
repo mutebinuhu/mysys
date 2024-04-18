@@ -17,6 +17,9 @@ const requestsSchema = new mongoose.Schema({
     },
     prefferedTime:{
         type:String
+    },
+    status:{
+        default:"new request"
     }
 }, {
     timestamps: true
