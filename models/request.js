@@ -19,6 +19,7 @@ const requestsSchema = new mongoose.Schema({
         type:String
     },
     status:{
+        type: String,
         default:"new request"
     }
 }, {
