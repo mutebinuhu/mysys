@@ -1,5 +1,14 @@
 const Request = require("../models/request");
 const { Types } = require('mongoose');
+exports.getAllRequests = async(req, res)=>{
+    try {
+        const requests = await Request.find({}).select('name phone service prefferedDate prefferedTime status');
+        return res.json({"data":requests});
+    } catch (error) {
+        console.log("err", error)
+        res.status(500).json({"error":"An error has occured"})
+    }
+}
 
 exports.getRequest = async(req, res) =>{
    // const {name, phone, service, prefferedDate, prefferedTime} = req.body;
