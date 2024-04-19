@@ -16,15 +16,15 @@ exports.getRequest = async(req, res) =>{
         //return res.json(req.body);
         const saloonModel  = new Request(req.body); 
         const response = await saloonModel.save()
-        return res.status(200).json(response);
+        return res.status(200).json({
+            success:"True",
+            data:response
+        });
     } catch (error) {
         console.log("errrr", error)
-        res.status(500).json({"msg":"An error has occured"})
+        return res.status(500).json({sucess:"False", msg:"An error has occured"})
     }
 
-    return res.status(200).json({
-        "data":"request sente"
-    })
 }
 
 exports.getSingleRequest = async(req, res) =>{
